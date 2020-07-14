@@ -11,6 +11,7 @@ Write-Verbose "Token File: $wowprofTokenFile"
 $functions = Get-ChildItem -Path $PSScriptRoot\functions\*.ps1 -Exclude *.tests.*
 foreach ( $item in $functions ) {
     . $item.FullName
+    Export-ModuleMember -Function $item.BaseName
 }
 
 # Retrieve current access token if there are stored credentials
