@@ -1,4 +1,4 @@
-function Connect-WowApiAccount {
+function Connect-ApiAccount {
     <#
         .SYNOPSIS
             Retrieves an access token from the Battle.Net API using provided or stored credentials

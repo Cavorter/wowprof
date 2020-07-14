@@ -1,4 +1,4 @@
-function Test-WowToken {
+function Test-Token {
     <#
         .SYNOPSIS
             Tests to see if the current token has expired

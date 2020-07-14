@@ -1,4 +1,4 @@
-function Get-WowToken {
+function Get-Token {
     <#
         .SYNOPSIS
             Retrieves the current OAUTH token from disk
