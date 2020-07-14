@@ -5,7 +5,6 @@ if ( -not (Test-Path -Path $wowprofDataDir) ) {
 }
 
 $wowprofTokenFile = Join-Path -Path $wowprofDataDir -ChildPath "token.xml"
-Write-Verbose "Token File: $wowprofTokenFile"
 
 # Load all functions
 $functions = Get-ChildItem -Path $PSScriptRoot\functions\*.ps1 -Exclude *.tests.*
@@ -17,7 +16,7 @@ foreach ( $item in $functions ) {
 # Retrieve current access token if there are stored credentials
 $wowprofApiCred = Join-Path -Path $wowprofDataDir -ChildPath client.xml
 if ( Test-Path -Path $wowprofApiCred ) {
-    Connect-WowApiAccount
+    Connect-ApiAccount
 } else {
     Write-Warning "No stored API credentials found! Use Connect-WowApiAccount before attempting to use any commands in this module!"
 }
